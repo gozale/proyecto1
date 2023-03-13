@@ -18,3 +18,27 @@ do
   esac
 done
 
+function_a()
+{
+
+echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
+optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal")
+
+select optA in ${optionsA[@]}"
+do
+  case $optA in
+    "SCRUM")
+      echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
+      ;;
+     "X.P.")
+      echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
+      ;;
+     "Kanban")
+      echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
+      ;;
+     "Crystal")
+      echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
+     
+
+}
+
