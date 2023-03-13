@@ -1,6 +1,6 @@
 #!/bin/bash
 
-H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)
+H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
 options=("-a" "-t" "Quit")
 select opt in "${options[@]}"
 do
