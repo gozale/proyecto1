@@ -132,23 +132,24 @@ menu() {
       case $opc in
         "Agregar info")
           echo "Seleccionaste agregar info"
-          agregarinfo()
+          agregarinfo $doc
           ;;
         "Buscar info")
-          echo "Seleccionaste agregar info"
-          agregarinfo()
+          echo "Seleccionaste buscar info"
+          buscarinfo $doc
           ;;
         "Borrar info")
           echo "Seleccionaste borrar info"
-          borrarinfo()
+          borrarinfo $doc
           ;;
         "Ver info")
           echo "Seleccionaste ver info"
-          ver info()
+          ver info $doc
          "Salir"
             break
             ;;
-         *) echo "Opción invalida";;
+         *) echo "Opción invalida"
+         ;;
         esac 
       done
 } 
@@ -164,19 +165,19 @@ do
   case $optA in
     "SCRUM")
       echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
-      menu()
+      menu SCRUM.txt
       ;;
      "X.P.")
       echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
-      menu()
+      menu XP.txt
       ;;
      "Kanban")
       echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
-      menu()
+      menu Kanban.txt
       ;;
      "Crystal")
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
-      menu()
+      menu Crystal.txt
       ;;
      "Main Menu"
       menu_p()
@@ -186,22 +187,22 @@ do
 function_t()
 {
 echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
-optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
+optionsA = ( "Cascada", "Espiral", "ModeloV", "Main Menu")
 
 select optA in ${optionsA[@]}"
 do
   case $optA in
     "Cascada")
       echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
-      menu()
+      menu Cascada.txt
       ;;
-     "X.P.")
+     "Espiral")
       echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
-      menu()
+      menu Espiral.txt
       ;;
-     "Kanban")
+     "ModeloV")
       echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
-      menu()
+      menu ModeloV.txt
       ;;
      "Main Menu")
       menu_p()
