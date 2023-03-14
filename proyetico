@@ -112,7 +112,8 @@ do
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
       menu()
       ;;
-   
      "Main Menu"
+      return
+      ;;
 }
 
