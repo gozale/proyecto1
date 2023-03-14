@@ -1,34 +1,29 @@
 #!/bin/bash
 
-function menu_p {
-  echo="Ingresa si quieres ingresar a metodologías ágiles (ingrese 1) o a metodologías tradicionales (ingrese 2), para salir ingrese 3"
-  x=0
-  while [ $x = 0 ]
-  do
-        echo="Ingresa si quieres ingresar a metodologías ágiles (ingrese 1) o a metodologías tradicionales (ingrese 2), para salir ingrese 3"
+menu_p() {
+    x=0
+    while [ $x = 0 ]
+    do
+        H2="Ingresa si quieres ingresar a metodologías ágiles (ingrese 1) o a metodologías tradicionales (ingrese 2), para salir ingrese 3"
+        echo $H2
         read choice
         
         case $choice in
-                1)
-                    echo "Metodologías ágiles"
-                    function_a 
-                    x=1;;
-                2)
-                    echo "Metodologías tradicionales"
-                    function_t 
-                    x=1;;
-                3)
-                    echo "Adiós"
-                    break ;;
-                *) 
-                    
-                    echo "opción inválida 1" 
-                    ;;
+            1)
+                echo "Metodologías ágiles"
+                function_a ;;
+            2)
+                echo "Metodologías tradicionales"
+                function_t ;;
+            3)
+                echo "Adiós"
+                break ;;
+            *) 
+                echo "opción inválida 1" ;;
                 
         esac
-  done
+    done
 }
-
 # Agregar info en a
 agregarinfo() 
 {
