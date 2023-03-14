@@ -53,7 +53,7 @@ agregarinfoA()
 # Ver la info de a
 verinfo()
 {
-  cat info.txt
+  cat $doc
   while true; do
       echo "Presiona cualquier tecla para regresar al menú"
       read choice
