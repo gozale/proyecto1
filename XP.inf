@@ -1,1 +1,13 @@
+Definición (Extreme programming): metodología que hace el seguimiento constante y la realización de diversas pruebas y pequeños ajustes en proyectos que necesitan agilidad o que están en constante cambio.
 
+Valores
+Comunicación: para que los desarrolladores puedan entender con precisión lo que el cliente necesita y para que el propio cliente sea consciente de las posibilidades, la estructura y los objetivos del sistema, el Extreme Programming propone conversaciones cara a cara y directas entre las partes.
+Simplicidad: prioritiza solo lo que es absolutamente necesario para el proyecto.
+Feedback: la retroalimentación y los comentarios constantes, tempranos y de ciclo corto sobre las prácticas durante el proceso son fundamentales para garantizar ajustes rápidos y más precisos.
+Coraje: ser abierto al cabio, aceptar y afrontar fallas y fracaso, aceptar feedback.
+Respeto:  el trabajo en equipo es una de las premisas de la XP y, para ello, es necesario que los miembros se respeten, acepten sugerencias, colaboren entre sí y valoren una buena relación.
+
+Mapeo AS IS, TO BE, TO DO
+AS IS: Demuestra la situación actual y la realidad de los procesos
+TO BE: Se rediseña el proceso, buscando evaluar las actividades del negocio y buscando propuestas.
+TO DO: Modelado técnico, se identifica cómo la tecnología puede ayudar a la automatización y gestión de procesos.
