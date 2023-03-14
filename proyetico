@@ -2,25 +2,38 @@
 menu_p()
 
 menu_p(){
-  H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
-  options=("-a" "-t" "Salir")
-  select opt in "${options[@]}"
-  do
-    case $opt in 
-      "-a")
-        function_a()
-
-        ;;
-      "-t")
-        function_t()
-        ;;
-      "Salir")
-        break
-        ;;
-       *) echo "opción inválida $REPLY";;
-    esac
-  done
-}
+  height=15
+  width=40
+  choice_height=4
+  H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese 1) o a metodologías tradicionales (ingrese 2), para salir ingrese 3'
+  options=(1 "-a" 
+           2 "-t" 
+           3 "Salir")
+  choice=$(dialog --clear \
+                  --title "$H1" \
+                  --menu "Menu" \
+                  $height $width $choice_height \
+                  "${options[@]}" \
+                  2>&1 >/dev/tty)
+  clear
+  case $choice in
+          1)
+              echo "Metodologías ágiles"
+              function_a()
+              ;;
+          2)
+              echo "Metodologías tradicionales"
+              function_t()
+              ;;
+          3)
+              echo "Adiós"
+              break
+              ;;
+          *) echo "opción inválida"
+          ;;
+          
+  esac
+ }
 
 # Agregar info en a
 agregarinfo() 
