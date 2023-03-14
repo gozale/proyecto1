@@ -23,7 +23,7 @@ function menu_p {
                 *) 
                     
                     echo "opción inválida 1" 
-                    sleep 3;;
+                    ;;
                 
         esac
   done
