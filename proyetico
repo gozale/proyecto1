@@ -128,6 +128,7 @@ buscarinfo()
 
 menu() {
   while true; do
+    H2= "Usted está en el menú $2"
     informacion = "Escribe que quieres hacer: "
     opciones = ("Agregar info", "Buscar info", "Borar info", "Ver info")
     select opc in "${opciones[@]}"
@@ -135,19 +136,19 @@ menu() {
       case $opc in
         "Agregar info")
           echo "Seleccionaste agregar info"
-          agregarinfo $doc
+          agregarinfo $1
           ;;
         "Buscar info")
           echo "Seleccionaste buscar info"
-          buscarinfo $doc
+          buscarinfo $1
           ;;
         "Borrar info")
           echo "Seleccionaste borrar info"
-          borrarinfo $doc
+          borrarinfo $1
           ;;
         "Ver info")
           echo "Seleccionaste ver info"
-          ver info $doc
+          ver info $1
          "Salir"
             break
             ;;
@@ -168,19 +169,19 @@ do
   case $optA in
     "SCRUM")
       echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
-      menu SCRUM.inf
+      menu SCRUM.inf SCRUM
       ;;
      "X.P.")
       echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
-      menu XP.inf
+      menu XP.inf XP
       ;;
      "Kanban")
       echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
-      menu Kanban.inf
+      menu Kanban.inf Kanban
       ;;
      "Crystal")
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
-      menu Crystal.inf
+      menu Crystal.inf Crystal
       ;;
      "Main Menu"
       menu_p()
@@ -197,15 +198,15 @@ do
   case $optA in
     "Cascada")
       echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
-      menu Cascada.inf
+      menu Cascada.inf Cascada
       ;;
      "Espiral")
       echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
-      menu Espiral.inf
+      menu Espiral.inf Espiral
       ;;
      "ModeloV")
       echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
-      menu ModeloV.inf
+      menu ModeloV.inf ModeloV
       ;;
      "Main Menu")
       menu_p()
