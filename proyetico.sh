@@ -172,7 +172,7 @@ function function_a {
     while [ $x1 = 0 ]
     do
         echo $H3
-        options3=("1 SCRUM 2 XP 3 Kanban 4 Crystal 5 Main Menu 6 Salir")
+        options3=("1) SCRUM 2) XP 3) Kanban 4) Crystal 5) Main Menu 6) Salir")
         echo $options3
         read choice3
         
@@ -201,7 +201,7 @@ function function_t {
     while [ $x2 = 0 ]
     do
         echo $H4
-        options4=("1 Cascada 2 Espiral 3 Modelo V 4 Main Menu 5 Salir")
+        options4=("1) Cascada 2) Espiral 3) Modelo V 4) Main Menu 5) Salir")
         echo $options4
         read choice4
 
