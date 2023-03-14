@@ -20,11 +20,41 @@ do
 done
 
 
+
+
+
+
+
+
+
+
+
 # Agregar info en a
 agregarinfoA() 
 {
-  read -p "Escribe la información que quieras agregar: " nueva_info
-  echo "$nueva_info" >> info.txt
+  echo "Escribe la info que quieres agregar: "
+  read info
+  echo "$info" >> info.txt
+  echo "Información agregada correctamente"
+  
+  while true; do 
+  echo "¿Quieres agregar mas información o regresar al menú?"
+  echo "1. Agregar más info"
+  echo "2. Regresar al menú"
+  
+  read choice
+  case $choice in
+    1)
+        agregarinfoA() 
+        ;;
+      2)
+        return
+        ;;
+      *)
+        echo "Opción inválida"
+        ;;
+    esac
+  done
 }
 
 
@@ -32,6 +62,12 @@ agregarinfoA()
 verinfo()
 {
   cat info.txt
+  while true; do
+      echo "Presiona cualquier tecla para regresar al menú"
+      read choice
+
+      return
+    done
 }
 
 
@@ -45,6 +81,26 @@ borrarinfo()
   read numbers
   sed -i "${numbers}d" info.txt
   echo "Se borrarán las lineas que seleccionaste"
+  
+  while true; do
+    echo "¿Quieres borrar mas información o regresar al menú?"
+    echo "1. Borrar info"
+    echo "2. Regresar al menú"
+
+    read choice
+
+    case $choice in
+      1)
+        borrarinfo()
+        ;;
+      2)
+        return
+        ;;
+      *)
+        echo "Opción inválida"
+        ;;
+    esac
+  done
 }
 
 
@@ -54,7 +110,30 @@ buscarinfo()
   echo "Escribe que información quieres bucsar: "
   read term
   grep -i "$term"  info.txt
+  while true; do 
+  echo "¿Quieres buscar mas información o regresar al menú?"
+  echo "1. Buscar más info"
+  echo "2. Regresar al menú"
+  
+  read choice
+  case $choice in
+    1)
+        buscarinfo() 
+        ;;
+      2)
+        return
+        ;;
+      *)
+        echo "Opción inválida"
+        ;;
+    esac
+  done
 }
+
+
+
+
+
 
 menu() {
   while true; do
@@ -84,7 +163,6 @@ menu() {
          *) echo "Opción invalida";;
         esac 
       done
-
 } 
 
 
