@@ -1,8 +1,8 @@
 FROM debian
 WORKDIR /app
-COPY ./proyetico.sh /app/proyetico.sh
+COPY ./proyetico.sh ./proyetico.sh
 ARG choice
 SHELL ["/bin/bash","-c"]
-RUN chmod +x /app/proyetico.sh
-ENTRYPOINT [ "/app/proyetico.sh" ]
+RUN chmod +x /proyetico.sh
+ENTRYPOINT [ "/proyetico.sh" ]
 CMD ["$choice"]
