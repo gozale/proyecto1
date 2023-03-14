@@ -175,7 +175,7 @@ function menu {
   esac
  }
 
-function function_a{
+function function_a {
   height=15
   width=40
   choice_height=4
@@ -219,7 +219,7 @@ function function_a{
 
 }
 
-function function_t{
+function function_t {
   height=15
   width=40
   choice_height=4
@@ -258,4 +258,5 @@ function function_t{
   esac
 
 }
+
 menu_p
