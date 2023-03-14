@@ -175,58 +175,87 @@ function menu {
   esac
  }
 
-function_a()
-{
-echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
-optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
+function function_a{
+height=15
+  width=40
+  choice_height=4
+  H3='Bienvenido a la guía rápida de Agil, para continuar seleccione un tema:'
+  options=(1 "SCRUM" 
+           2 "XP" 
+           3 "Kanban"
+           4 "Crystal"
+           5 "Main Menu"
+           6 "Salir")
+           
+  choice=$(dialog --clear \
+                  --title "$H3" \
+                  --menu "Menu" \
+                  $height $width $choice_height \
+                  "${options[@]}" \
+                  2>&1 >/dev/tty)
+                  
+  clear
+  case $choice in
+          1)
+              echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
+              menu SCRUM.inf SCRUM ;;
+          2)
+              echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
+              menu XP.inf XP;;
+          3)
+              echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
+              menu Kanban.inf Kanban;;
+          4)
+              echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
+              menu Crystal.inf Crystal;;
+          5)
+              menu_p;;
+          6)
+              break;;
+          
+          *) echo "opción inválida" ;;
+          
+  esac
 
-select optA in "${optionsA[@]}"
-do
-  case $optA in
-    "SCRUM")
-      echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
-      menu SCRUM.inf SCRUM
-      ;;
-     "X.P.")
-      echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
-      menu XP.inf XP
-      ;;
-     "Kanban")
-      echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
-      menu Kanban.inf Kanban
-      ;;
-     "Crystal")
-      echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
-      menu Crystal.inf Crystal
-      ;;
-     "Main Menu"
-      menu_p()
-      ;;
 }
 
-function_t()
-{
-echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
-optionsA = ( "Cascada", "Espiral", "ModeloV", "Main Menu")
+function function_t{
+height=15
+  width=40
+  choice_height=4
+  H4='Bienvenido a la guía rápida de tradicionales, para continuar seleccione un tema:'
+  options=(1 "Cascada" 
+           2 "Espiral" 
+           3 "Modelo V"
+           4 "Main Menu"
+           5 "Salir")
+           
+  choice=$(dialog --clear \
+                  --title "$H4" \
+                  --menu "Menu" \
+                  $height $width $choice_height \
+                  "${options[@]}" \
+                  2>&1 >/dev/tty)
+                  
+  clear
+  case $choice in
+          1)
+              echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
+              menu Cascada.inf Cascada ;;
+          2)
+              echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
+              menu Espiral.inf Espiral;;
+          3)
+              echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
+              menu ModeloV.inf ModeloV;;
+          4)
+              menu_p;;
+          5)
+              break;;
+          
+          *) echo "opción inválida" ;;
+          
+  esac
 
-select optA in "${optionsA[@]}"
-do
-  case $optA in
-    "Cascada")
-      echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
-      menu Cascada.inf Cascada
-      ;;
-     "Espiral")
-      echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
-      menu Espiral.inf Espiral
-      ;;
-     "ModeloV")
-      echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
-      menu ModeloV.inf ModeloV
-      ;;
-     "Main Menu")
-      menu_p()
-      ;;
 }
-
 menu_p
