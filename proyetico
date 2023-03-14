@@ -22,12 +22,12 @@ menu_p(){
 }
 
 # Agregar info en a
-agregarinfoA() 
+agregarinfo() 
 {
-  echo $doc
+  echo $1
   echo "Escribe la info que quieres agregar: "
   read info
-  echo "$info" >> $doc
+  echo "$info" >> $1
   echo "Información agregada correctamente"
   
   while true; do 
@@ -38,7 +38,7 @@ agregarinfoA()
   read choice
   case $choice in
     1)
-        agregarinfoA() 
+        agregarinfo $1 
         ;;
       2)
         return
@@ -54,7 +54,7 @@ agregarinfoA()
 # Ver la info de a
 verinfo()
 {
-  cat $doc
+  cat $1
   while true; do
       echo "Presiona cualquier tecla para regresar al menú"
       read choice
@@ -67,13 +67,13 @@ verinfo()
 # Borrar la info de a
 borrarinfo()
 {
-  echo $doc
+  echo $1
   echo "Escribe que información quieres borrar: "
   read term
-  grep -i "$term"  $doc
+  grep -i "$term"  $1
   echo "Escribe el numero de linea que quieres borrar: "
   read numbers
-  sed -i "${numbers}d" $doc
+  sed -i "${numbers}d" $1
   echo "Se borrarán las lineas que seleccionaste"
   
   while true; do
@@ -85,7 +85,7 @@ borrarinfo()
 
     case $choice in
       1)
-        borrarinfo()
+        borrarinfo $1
         ;;
       2)
         return
@@ -101,10 +101,10 @@ borrarinfo()
 # Buscar la info de a
 buscarinfo()
 {
-  echo $doc
+  echo $1
   echo "Escribe que información quieres bucsar: "
   read term
-  grep -i "$term"  $doc
+  grep -i "$term"  $1
   while true; do 
   echo "¿Quieres buscar mas información o regresar al menú?"
   echo "1. Buscar más info"
@@ -113,7 +113,7 @@ buscarinfo()
   read choice
   case $choice in
     1)
-        buscarinfo() 
+        buscarinfo $1
         ;;
       2)
         return
@@ -164,7 +164,7 @@ function_a()
 echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
 optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
 
-select optA in ${optionsA[@]}"
+select optA in "${optionsA[@]}"
 do
   case $optA in
     "SCRUM")
@@ -193,7 +193,7 @@ function_t()
 echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
 optionsA = ( "Cascada", "Espiral", "ModeloV", "Main Menu")
 
-select optA in ${optionsA[@]}"
+select optA in "${optionsA[@]}"
 do
   case $optA in
     "Cascada")
