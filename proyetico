@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 function menu_p {
   x=0
   while [ $x = 0 ]
