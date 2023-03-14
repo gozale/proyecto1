@@ -1,33 +1,25 @@
 #!/bin/bash
 
-H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
-options=("-a" "-t" "Salir")
-select opt in "${options[@]}"
-do
-  case $opt in 
-    "-a")
-      function_a()
-      
-      ;;
-    "-t")
-      
-      ;;
-    "Salir")
-      break
-      ;;
-     *) echo "opción inválida $REPLY";;
-  esac
-done
+menu_p(){
+  H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
+  options=("-a" "-t" "Salir")
+  select opt in "${options[@]}"
+  do
+    case $opt in 
+      "-a")
+        function_a()
 
-
-
-
-
-
-
-
-
-
+        ;;
+      "-t")
+        function_t()
+        ;;
+      "Salir")
+        break
+        ;;
+       *) echo "opción inválida $REPLY";;
+    esac
+  done
+}
 
 # Agregar info en a
 agregarinfoA() 
@@ -131,10 +123,6 @@ buscarinfo()
 }
 
 
-
-
-
-
 menu() {
   while true; do
     informacion = "Escribe que quieres hacer: "
@@ -191,7 +179,32 @@ do
       menu()
       ;;
      "Main Menu"
-      return
+      menu_p()
+      ;;
+}
+
+function_t()
+{
+echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
+optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
+
+select optA in ${optionsA[@]}"
+do
+  case $optA in
+    "Cascada")
+      echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
+      menu()
+      ;;
+     "X.P.")
+      echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
+      menu()
+      ;;
+     "Kanban")
+      echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
+      menu()
+      ;;
+     "Main Menu")
+      menu_p()
       ;;
 }
 
