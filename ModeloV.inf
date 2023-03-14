@@ -1,2 +1,7 @@
 Definición: Es la representación gráfica del ciclo de vida del desarrollo de sistema.
 
+Niveles de prueba
+Pruebas unitarias: ejecutan sobre un módulo del software.
+Pruebas de integración: se corrobora que los diferentes sistemas de un mismo producto interactuen correctamente.
+Prueba de sistema: se checa la integración de los sistemas para ver que actúe correctamente.
+Prueba de aceptación: se ejecutan cuando el área de Testing finalizó sus pruebas planificadas.
