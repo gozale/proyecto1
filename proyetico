@@ -1,20 +1,21 @@
 #!/bin/bash
 
 H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
-options=("-a" "-t" "Quit")
+options=("-a" "-t" "Salir")
 select opt in "${options[@]}"
 do
   case $opt in 
     "-a")
+      function_a()
       
       ;;
     "-t")
       
       ;;
-    "Quit")
+    "Salir")
       break
       ;;
-     *) echo "invalid option $REPLY";;
+     *) echo "opción inválida $REPLY";;
   esac
 done
 
@@ -22,7 +23,7 @@ function_a()
 {
 
 echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
-optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal")
+optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
 
 select optA in ${optionsA[@]}"
 do
@@ -38,7 +39,24 @@ do
       ;;
      "Crystal")
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
-     
-
+     "Main Menu"
 }
 
+# Agregar info en a
+
+agregarinfoA {
+  read -p "Escribe la información que quieras agregar: " nueva_info
+  echo "$nueva_info" >> info.txt
+}
+
+
+# Ver la info de a
+verinfo {
+  cat info.txt
+}
+
+
+# Borrar la info de a
+borrar info{
+  rm info.txt
+}
