@@ -129,66 +129,57 @@ buscarinfo()
 }
 
 function menu {
-  height=15
-  width=40
-  choice_height=4
-  H2='Usted está en el menú $2 escribe que quieres hacer:'
-  options=(1 "Agregar info" 
-           2 "Buscar info" 
-           3 "Borrar info"
-           4 "Ver info"
-           5 "Salir")
-           
-  choice=$(dialog --clear \
-                  --title "$H2" \
-                  --menu "Menu" \
-                  $height $width $choice_height \
-                  "${options[@]}" \
-                  2>&1 >/dev/tty)
-                  
-  
-  case $choice in
-          1)
-              echo "Seleccionaste agregar info"
-              agregarinfo $1 ;;
-          2)
-              echo "Seleccionaste buscar info"
-              buscarinfo $1;;
-          3)
-              echo "Seleccionaste borrar info"
-              borrarinfo $1;;
-          4)
-              echo "Seleccionaste ver info"
-              ver info $1;;
-          5)
-              break;;
-          
-          *) echo "opción inválida 5" ;;
-          
-  esac
- }
+    H2='Usted está en el menú $2 escribe que quieres hacer:'
+    x5=0
+    while [ $x5 = 0 ]
+        do
+        echo $H2
+        options2=(1 "Agregar info" 
+                  2 "Buscar info" 
+                  3 "Borrar info"
+                  4 "Ver info"
+                  5 "Salir")
+        echo $options2
+        read choice2
+
+        case $choice2 in
+            1)
+                echo "Seleccionaste agregar info"
+                agregarinfo $1 ;;
+            2)
+                echo "Seleccionaste buscar info"
+                buscarinfo $1;;
+            3)
+                echo "Seleccionaste borrar info"
+                borrarinfo $1;;
+            4)
+                echo "Seleccionaste ver info"
+                verinfo $1;;
+            5)
+                break;;
+
+            *) 
+                echo "opción inválida 5" ;;
+
+        esac
+    done
+}
 
 function function_a {
-  height=15
-  width=40
-  choice_height=4
+  x1=0
+  while [ $x1 = 0 ]
   H3='Bienvenido a la guía rápida de Agil, para continuar seleccione un tema:'
+  echo H3
   options=(1 "SCRUM" 
            2 "XP" 
            3 "Kanban"
            4 "Crystal"
            5 "Main Menu"
            6 "Salir")
-           
-  choice=$(dialog --clear \
-                  --title "$H3" \
-                  --menu "Menu" \
-                  $height $width $choice_height \
-                  "${options[@]}" \
-                  2>&1 >/dev/tty)
-                  
+  echo $options
+  read choice2
   
-  case $choice in
+  case $choice2 in
           1)
               echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
               menu SCRUM.inf SCRUM ;;
@@ -213,25 +204,20 @@ function function_a {
 }
 
 function function_t {
-  height=15
-  width=40
-  choice_height=4
+  x2=0
+  while [ $x2 = 0 ]
   H4='Bienvenido a la guía rápida de tradicionales, para continuar seleccione un tema:'
-  options=(1 "Cascada" 
+  echo $H4
+  options2=(1 "Cascada" 
            2 "Espiral" 
            3 "Modelo V"
            4 "Main Menu"
            5 "Salir")
-           
-  choice=$(dialog --clear \
-                  --title "$H4" \
-                  --menu "Menu" \
-                  $height $width $choice_height \
-                  "${options[@]}" \
-                  2>&1 >/dev/tty)
+   echo $options2
+   read choice3
                   
   
-  case $choice in
+  case $choic3e in
           1)
               echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
               menu Cascada.inf Cascada ;;
