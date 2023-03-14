@@ -1,4 +1,5 @@
 #!/bin/bash
+menu_p()
 
 menu_p(){
   H1='Ingresa si quieres ingresar a metodologías ágiles (ingrese -a) o a metodologías tradicionales (ingrese -t)'
