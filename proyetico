@@ -1,7 +1,6 @@
 #!/bin/bash
-menu_p()
 
-menu_p(){
+function menu_p {
   height=15
   width=40
   choice_height=4
@@ -227,3 +226,4 @@ do
       ;;
 }
 
+menu_p
