@@ -1,1 +1,7 @@
+Definición: Método de cuclo de vida de desarrollo de sistema utilizado para la gestión de riestos.
+Esta combina el modelo de procesos de desarrollo ietrativo y el de castacda. 
 
+Objetivo: se determinan junto con el cliente, mientras se discuten posibles alterntivas y se establecen condiciones.
+Análisis y evaluación de riesgos: Se identifican y evalúan riesgos potenciales y alternativas existentes. 
+Desarrollo y prueba: Se le añaden funcionalidades a los prototipos. El código real es escrito y migrado a un entorno de prueba.
+Planificación del siguiente ciclo: Se planifica al final de cada etapa.
