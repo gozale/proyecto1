@@ -176,7 +176,7 @@ function menu {
  }
 
 function function_a{
-height=15
+  height=15
   width=40
   choice_height=4
   H3='Bienvenido a la guía rápida de Agil, para continuar seleccione un tema:'
@@ -220,7 +220,7 @@ height=15
 }
 
 function function_t{
-height=15
+  height=15
   width=40
   choice_height=4
   H4='Bienvenido a la guía rápida de tradicionales, para continuar seleccione un tema:'
