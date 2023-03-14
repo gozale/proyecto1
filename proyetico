@@ -24,9 +24,10 @@ menu_p(){
 # Agregar info en a
 agregarinfoA() 
 {
+  echo $doc
   echo "Escribe la info que quieres agregar: "
   read info
-  echo "$info" >> info.txt
+  echo "$info" >> $doc
   echo "Información agregada correctamente"
   
   while true; do 
@@ -66,12 +67,13 @@ verinfo()
 # Borrar la info de a
 borrarinfo()
 {
+  echo $doc
   echo "Escribe que información quieres borrar: "
   read term
-  grep -i "$term"  info.txt
+  grep -i "$term"  $doc
   echo "Escribe el numero de linea que quieres borrar: "
   read numbers
-  sed -i "${numbers}d" info.txt
+  sed -i "${numbers}d" $doc
   echo "Se borrarán las lineas que seleccionaste"
   
   while true; do
@@ -99,9 +101,10 @@ borrarinfo()
 # Buscar la info de a
 buscarinfo()
 {
+  echo $doc
   echo "Escribe que información quieres bucsar: "
   read term
-  grep -i "$term"  info.txt
+  grep -i "$term"  $doc
   while true; do 
   echo "¿Quieres buscar mas información o regresar al menú?"
   echo "1. Buscar más info"
