@@ -4,7 +4,6 @@ function menu_p {
   x=0
   while [ $x = 0 ]
   do
-        clear
         echo='Ingresa si quieres ingresar a metodologías ágiles (ingrese 1) o a metodologías tradicionales (ingrese 2), para salir ingrese 3'
         read choice
         
@@ -21,7 +20,7 @@ function menu_p {
                     echo "Adiós"
                     break ;;
                 *) 
-                    clear
+                    
                     echo "opción inválida 1" 
                     sleep 3;;
                 
@@ -151,7 +150,7 @@ function menu {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Seleccionaste agregar info"
@@ -192,7 +191,7 @@ function function_a {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
@@ -235,7 +234,7 @@ function function_t {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
@@ -382,7 +381,7 @@ function menu {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Seleccionaste agregar info"
@@ -423,7 +422,7 @@ function function_a {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
@@ -466,7 +465,7 @@ function function_t {
                   "${options[@]}" \
                   2>&1 >/dev/tty)
                   
-  clear
+  
   case $choice in
           1)
               echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
