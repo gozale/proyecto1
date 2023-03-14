@@ -165,19 +165,19 @@ do
   case $optA in
     "SCRUM")
       echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
-      menu SCRUM.txt
+      menu SCRUM.inf
       ;;
      "X.P.")
       echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
-      menu XP.txt
+      menu XP.inf
       ;;
      "Kanban")
       echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
-      menu Kanban.txt
+      menu Kanban.inf
       ;;
      "Crystal")
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
-      menu Crystal.txt
+      menu Crystal.inf
       ;;
      "Main Menu"
       menu_p()
@@ -194,15 +194,15 @@ do
   case $optA in
     "Cascada")
       echo "Usted esta en la sección Cascada, seleccione la opción que desea utilizar."
-      menu Cascada.txt
+      menu Cascada.inf
       ;;
      "Espiral")
       echo "Usted esta en la sección Espiral, seleccione la opción que desea utilizar."
-      menu Espiral.txt
+      menu Espiral.inf
       ;;
      "ModeloV")
       echo "Usted esta en la sección Modelo V, seleccione la opción que desea utilizar."
-      menu ModeloV.txt
+      menu ModeloV.inf
       ;;
      "Main Menu")
       menu_p()
