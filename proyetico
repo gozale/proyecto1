@@ -19,9 +19,77 @@ do
   esac
 done
 
+
+# Agregar info en a
+agregarinfoA() 
+{
+  read -p "Escribe la información que quieras agregar: " nueva_info
+  echo "$nueva_info" >> info.txt
+}
+
+
+# Ver la info de a
+verinfo()
+{
+  cat info.txt
+}
+
+
+# Borrar la info de a
+borrarinfo()
+{
+  echo "Escribe que información quieres borrar: "
+  read term
+  grep -i "$term"  info.txt
+  echo "Escribe el numero de linea que quieres borrar: "
+  read numbers
+  sed -i "${numbers}d" info.txt
+  echo "Se borrarán las lineas que seleccionaste"
+}
+
+
+# Buscar la info de a
+buscarinfo()
+{
+  echo "Escribe que información quieres bucsar: "
+  read term
+  grep -i "$term"  info.txt
+}
+
+menu() {
+  while true; do
+    informacion = "Escribe que quieres hacer: "
+    opciones = ("Agregar info", "Buscar info", "Borar info", "Ver info")
+    select opc in "${opciones[@]}"
+    do 
+      case $opc in
+        "Agregar info")
+          echo "Seleccionaste agregar info"
+          agregarinfo()
+          ;;
+        "Buscar info")
+          echo "Seleccionaste agregar info"
+          agregarinfo()
+          ;;
+        "Borrar info")
+          echo "Seleccionaste borrar info"
+          borrarinfo()
+          ;;
+        "Ver info")
+          echo "Seleccionaste ver info"
+          ver info()
+         "Salir"
+            break
+            ;;
+         *) echo "Opción invalida";;
+        esac 
+      done
+
+} 
+
+
 function_a()
 {
-
 echo "Bienvenido a la guía rápida de Agile, para continuar seleccione un tema:" 
 optionsA = ("SCRUM", "X.P.", "Kanban", "Crystal", "Main Menu")
 
@@ -30,33 +98,21 @@ do
   case $optA in
     "SCRUM")
       echo "Usted esta en la sección SCRUM, seleccione la opción que desea utilizar."
+      menu()
       ;;
      "X.P.")
       echo "Usted esta en la sección X.P., seleccione la opción que desea utilizar."
+      menu()
       ;;
      "Kanban")
       echo "Usted esta en la sección Kanban, seleccione la opción que desea utilizar."
+      menu()
       ;;
      "Crystal")
       echo "Usted esta en la sección Crystal, seleccione la opción que desea utilizar."
+      menu()
+      ;;
+   
      "Main Menu"
 }
 
-# Agregar info en a
-
-agregarinfoA {
-  read -p "Escribe la información que quieras agregar: " nueva_info
-  echo "$nueva_info" >> info.txt
-}
-
-
-# Ver la info de a
-verinfo {
-  cat info.txt
-}
-
-
-# Borrar la info de a
-borrar info{
-  rm info.txt
-}
