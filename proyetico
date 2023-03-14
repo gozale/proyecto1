@@ -135,39 +135,45 @@ buscarinfo()
   done
 }
 
-
-menu() {
-  while true; do
-    H2= "Usted está en el menú $2"
-    informacion = "Escribe que quieres hacer: "
-    opciones = ("Agregar info", "Buscar info", "Borar info", "Ver info")
-    select opc in "${opciones[@]}"
-    do 
-      case $opc in
-        "Agregar info")
-          echo "Seleccionaste agregar info"
-          agregarinfo $1
-          ;;
-        "Buscar info")
-          echo "Seleccionaste buscar info"
-          buscarinfo $1
-          ;;
-        "Borrar info")
-          echo "Seleccionaste borrar info"
-          borrarinfo $1
-          ;;
-        "Ver info")
-          echo "Seleccionaste ver info"
-          ver info $1
-         "Salir"
-            break
-            ;;
-         *) echo "Opción invalida"
-         ;;
-        esac 
-      done
-} 
-
+function menu {
+  height=15
+  width=40
+  choice_height=4
+  H2='Usted está en el menú $2 escribe que quieres hacer:'
+  options=(1 "Agregar info" 
+           2 "Buscar info" 
+           3 "Borrar info"
+           4 "Ver info"
+           5 "Salir")
+           
+  choice=$(dialog --clear \
+                  --title "$H2" \
+                  --menu "Menu" \
+                  $height $width $choice_height \
+                  "${options[@]}" \
+                  2>&1 >/dev/tty)
+                  
+  clear
+  case $choice in
+          1)
+              echo "Seleccionaste agregar info"
+              agregarinfo $1 ;;
+          2)
+              echo "Seleccionaste buscar info"
+              buscarinfo $1;;
+          3)
+              echo "Seleccionaste borrar info"
+              borrarinfo $1;;
+          4)
+              echo "Seleccionaste ver info"
+              ver info $1;;
+          5)
+              break;;
+          
+          *) echo "opción inválida" ;;
+          
+  esac
+ }
 
 function_a()
 {
