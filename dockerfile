@@ -1,3 +1,3 @@
 FROM ubuntu
-COPY proyetico.sh /
-CMD ["/proyetico.sh"]
+COPY /home/runner/work/proyecto1/proyecto1/Dockerfile/proyetico.sh 
+CMD ["/home/runner/work/proyecto1/proyecto1/Dockerfile/proyetico.sh"]
